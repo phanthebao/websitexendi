@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>XENDI Fitness & Dance</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Montserrat',sans-serif;
+    }
+
+    body{
+      background:#f7f4ef;
+      color:#222;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      background:
+      linear-gradient(to right, rgba(0,0,0,.85), rgba(0,0,0,.55)),
+      url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      position:relative;
+      color:white;
+      overflow:hidden;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:30px 0;
+    }
+
+    .logo{
+      font-size:30px;
+      font-weight:900;
+      letter-spacing:2px;
+      color:#ff8b2c;
+    }
+
+    .menu{
+      display:flex;
+      gap:35px;
+      font-size:14px;
+      color:#ddd;
+    }
+
+    .menu a:hover{
+      color:#ff8b2c;
+    }
+
+    .hero-content{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      align-items:center;
+      gap:40px;
+      margin-top:40px;
+    }
+
+    .hero-text h1{
+      font-size:72px;
+      line-height:1;
+      font-weight:900;
+      margin-bottom:25px;
+    }
+
+    .hero-text h1 span{
+      color:#ff8b2c;
+    }
+
+    .hero-text p{
+      color:#d6d6d6;
+      line-height:1.8;
+      max-width:520px;
+      margin-bottom:35px;
+    }
+
+    .hero-btns{
+      display:flex;
+      gap:15px;
+    }
+
+    .btn{
+      padding:15px 30px;
+      border-radius:14px;
+      font-weight:700;
+      transition:.3s;
+      display:inline-block;
+    }
+
+    .btn-primary{
+      background:#ff8b2c;
+      color:white;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-3px);
+    }
+
+    .btn-outline{
+      border:1px solid rgba(255,255,255,.3);
+      color:white;
+    }
+
+    .hero-image{
+      position:relative;
+      display:flex;
+      justify-content:center;
+    }
+
+    .hero-circle{
+      width:520px;
+      height:520px;
+      background:#ff8b2c;
+      border-radius:50%;
+      position:absolute;
+      right:20px;
+      top:40px;
+      filter:blur(0px);
+    }
+
+    .hero-image img{
+      width:100%;
+      max-width:520px;
+      position:relative;
+      z-index:2;
+      object-fit:contain;
+    }
+
+    /* SERVICES */
+
+    .section{
+      padding:100px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:54px;
+      line-height:1.1;
+      font-weight:900;
+      color:#1d2d2f;
+    }
+
+    .section-title span{
+      color:#ff8b2c;
+    }
+
+    .section-title p{
+      margin-top:18px;
+      color:#777;
+      line-height:1.8;
+    }
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:white;
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+      transition:.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .card img{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:28px;
+    }
+
+    .tag{
+      display:inline-block;
+      background:#fff1e5;
+      color:#ff8b2c;
+      padding:8px 14px;
+      border-radius:50px;
+      font-size:12px;
+      font-weight:700;
+      margin-bottom:18px;
+    }
+
+    .card h3{
+      font-size:28px;
+      margin-bottom:15px;
+      color:#1d2d2f;
+    }
+
+    .card p{
+      color:#666;
+      line-height:1.8;
+      margin-bottom:25px;
+    }
+
+    .card a{
+      color:#ff8b2c;
+      font-weight:800;
+    }
+
+    /* ABOUT */
+
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:30px;
+      box-shadow:0 20px 40px rgba(0,0,0,.12);
+    }
+
+    .about-text h2{
+      font-size:56px;
+      line-height:1.1;
+      margin-bottom:25px;
+      color:#1d2d2f;
+    }
+
+    .about-text span{
+      color:#ff8b2c;
+    }
+
+    .about-text p{
+      color:#666;
+      line-height:1.9;
+      margin-bottom:30px;
+    }
+
+    .stats{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .stat-box{
+      background:white;
+      padding:25px;
+      border-radius:20px;
+      min-width:150px;
+      box-shadow:0 10px 25px rgba(0,0,0,.06);
+    }
+
+    .stat-box h3{
+      color:#ff8b2c;
+      font-size:32px;
+      margin-bottom:8px;
+    }
+
+    .stat-box p{
+      margin:0;
+      font-size:14px;
+      color:#777;
+    }
+
+    /* CTA */
+
+    .cta{
+      background:
+      linear-gradient(to right, rgba(0,0,0,.82), rgba(0,0,0,.75)),
+      url('https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      border-radius:40px;
+      padding:90px 50px;
+      text-align:center;
+      color:white;
+    }
+
+    .cta h2{
+      font-size:60px;
+      line-height:1.1;
+      margin-bottom:25px;
+    }
+
+    .cta span{
+      color:#ff8b2c;
+    }
+
+    .cta p{
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+      color:#ddd;
+      margin-bottom:35px;
+    }
+
+    footer{
+      padding:50px 0;
+      text-align:center;
+      color:#777;
+      font-size:14px;
+    }
+
+    @media(max-width:900px){
+
+      .hero-content,
+      .about{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      .hero-text h1{
+        font-size:52px;
+      }
+
+      .section-title h2,
+      .about-text h2,
+      .cta h2{
+        font-size:42px;
+      }
+
+      .hero-btns,
+      .stats{
+        justify-content:center;
+      }
+
+      .hero-circle{
+        width:350px;
+        height:350px;
+        right:auto;
+      }
+
+      .menu{
+        display:none;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="container">
+
+      <nav>
+        <div class="logo">XENDI</div>
+
+        <div class="menu">
+          <a href="#">Trang Chủ</a>
+          <a href="#">Dịch Vụ</a>
+          <a href="#">Cộng Đồng</a>
+          <a href="#">Liên Hệ</a>
+        </div>
+      </nav>
+
+      <div class="hero-content">
+
+        <div class="hero-text">
+          <h1>
+            BUILD YOUR <br>
+            <span>BEST VERSION</span>
+          </h1>
+
+          <p>
+            XENDI Fitness & Dance là không gian luyện tập hiện đại dành riêng cho nữ,
+            nơi bạn không chỉ thay đổi vóc dáng mà còn nâng cấp năng lượng,
+            sự tự tin và phong cách sống mỗi ngày.
+          </p>
+
+          <div class="hero-btns">
+            <a href="#" class="btn btn-primary">Đăng Ký Tập</a>
+            <a href="#" class="btn btn-outline">Xem Dịch Vụ</a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <div class="hero-circle"></div>
+
+          <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=1200&auto=format&fit=crop" alt="">
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>OUR <span>SERVICES</span></h2>
+        <p>
+          Không chỉ là tập luyện — XENDI xây dựng một hệ sinh thái giúp bạn đẹp hơn,
+          khỏe hơn và phát triển hình ảnh cá nhân chuyên nghiệp hơn.
+        </p>
+      </div>
+
+      <div class="services">
+
+        <!-- FITNESS -->
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="card-content">
+
+            <div class="tag">Community Fitness</div>
+
+            <h3>XENDI FITNESS</h3>
+
+            <p>
+              Lớp fitness cộng đồng dành riêng cho nữ với âm nhạc sôi động,
+              giáo án đốt mỡ hiệu quả và môi trường tích cực giúp bạn duy trì động lực mỗi ngày.
+            </p>
+
+            <a href="#">Khám phá thêm →</a>
+
+          </div>
+        </div>
+
+        <!-- CARE -->
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="card-content">
+
+            <div class="tag">Private Coaching</div>
+
+            <h3>XENDI CARE</h3>
+
+            <p>
+              Chương trình huấn luyện 1:1 cùng HLV cá nhân,
+              thiết kế riêng theo mục tiêu giảm mỡ, tăng cơ,
+              cải thiện vóc dáng và theo sát từng buổi tập.
+            </p>
+
+            <a href="#">Tư vấn ngay →</a>
+
+          </div>
+        </div>
+
+        <!-- NICE -->
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="card-content">
+
+            <div class="tag">Creative & Media</div>
+
+            <h3>XENDI NICE</h3>
+
+            <p>
+              Dịch vụ hỗ trợ xây dựng thương hiệu cá nhân:
+              chụp ảnh fitness, quay video social, chạy ads
+              và phát triển hình ảnh chuyên nghiệp trên mạng xã hội.
+            </p>
+
+            <a href="#">Xem portfolio →</a>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="about">
+
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="about-text">
+
+          <h2>
+            MORE THAN <span>A FITNESS STUDIO</span>
+          </h2>
+
+          <p>
+            XENDI không đơn thuần là một phòng tập.
+            Đây là nơi phụ nữ được truyền cảm hứng để thay đổi bản thân,
+            cải thiện sức khỏe, vóc dáng và sự tự tin trong cuộc sống hàng ngày.
+          </p>
+
+          <p>
+            Với mô hình tập luyện hiện đại kết hợp âm nhạc,
+            cộng đồng tích cực và sự đồng hành sát sao từ HLV,
+            mỗi buổi tập đều trở thành một trải nghiệm đầy năng lượng.
+          </p>
+
+          <div class="stats">
+
+            <div class="stat-box">
+              <h3>500+</h3>
+              <p>Học viên nữ</p>
+            </div>
+
+            <div class="stat-box">
+              <h3>3+</h3>
+              <p>Dịch vụ chuyên sâu</p>
+            </div>
+
+            <div class="stat-box">
+              <h3>100%</h3>
+              <p>Năng lượng tích cực</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="cta">
+
+        <h2>
+          START YOUR <span>FITNESS JOURNEY</span>
+        </h2>
+
+        <p>
+          Bắt đầu hành trình thay đổi vóc dáng và nâng cấp bản thân cùng XENDI.
+          Một phiên bản tự tin hơn đang chờ bạn phía trước.
+        </p>
+
+        <a href="#" class="btn btn-primary">Inbox Để Tư Vấn</a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 XENDI Fitness & Dance — Women Only Fitness Studio
+  </footer>
+
+</body>
+</html>
